@@ -4,8 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <h1>Hello World</h1>
+    <h1>ติวสอบ JS</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>แก้ไข</th>
+            <th>ลบ</th>
+        </tr>
+        <% getbooks.forEach(books => { %>
+        <tr>
+            <td><%= books.id %></td>
+            <td><%= books.title %></td>
+            <td><%= books.author %></td>
+            <td><a href="/Editbook/<%= books.id %>">แก้ไข</a></td>
+            <td><a href="/deleteBook/<%= books.id %>">ลบ</a></td>
+        </tr>
+        <% }) %>
+    </table>
+    <br>
+    <a href="/Addbook" class="AddBook">เพิ่มข้อมูล</a>
 </body>
 </html>
